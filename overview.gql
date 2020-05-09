@@ -1,0 +1,20 @@
+# This gql is meant to give an overview of the schema.
+
+# It is loosely following the [Shopify Graphql Design Tutorial](https://github.com/Shopify/graphql-design-tutorial/blob/master/TUTORIAL.md#step-one-a-birds-eye-view).
+
+# I think the benefit of this overview is to realise early on how the data
+# relationships, inheritence, etc., is to be modeled using GraphQL before a lot
+# of time is spent describing each of the individual fields.
+#
+# This overview includes:
+# - Object types
+# - Object fields which represent relationships
+#
+# This overview DOES NOT include:
+# - Object fields specific to the object
+# - Mutations
+
+type User {
+  [InteractedAds]
+  [CreatedAds]
+}
