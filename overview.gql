@@ -8,13 +8,17 @@
 #
 # This overview includes:
 # - Object types
-# - Object fields which represent relationships
-#
-# This overview DOES NOT include:
-# - Object fields specific to the object
+# - Some object fields
+# - Object fields that model relationships
+
+# This overview DOES NOT include: 
+# - Granular object fields
 # - Mutations
 
 type User {
+  Name
   [InteractedAds]
   [CreatedAds]
+  PointStuff
+  OAuthStuff
 }
