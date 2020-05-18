@@ -39,3 +39,13 @@ type Answer {
   Option
   User
 }
+
+type Goal {
+  User
+  [Donation]
+}
+
+type Donation {
+  User
+  Goal
+}
