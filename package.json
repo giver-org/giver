@@ -1,0 +1,32 @@
+{
+  "name": "giver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-server-express": "^2.13.1",
+    "express": "^4.17.1",
+    "graphql": "^15.0.0",
+    "nodemon": "^2.0.4",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.10.1",
+    "type-graphql": "^1.0.0-rc.1",
+    "typescript": "^3.9.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon --exec ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giver-org/giver.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giver-org/giver/issues"
+  },
+  "homepage": "https://github.com/giver-org/giver#readme"
+}
