@@ -1,22 +1,18 @@
 import 'reflect-metadata'
-import {ApolloServer} from 'apollo-server-express'
+import { ApolloServer } from 'apollo-server-express'
 import * as Express from 'express'
-import {buildSchema, Resolver, Query} from 'type-graphql'
+import { buildSchema } from 'type-graphql'
+import { createConnection } from 'typeorm'
 
-@Resolver()
-class HelloResolver {
-  @Query(() => String, {nullable: true, description: 'says hello to you'})
-  async hello() {
-    return 'hello world'
-  }
-}
+import { RegisterResolver } from './modules/user/Register'
 
 (async function main() {
+  await createConnection();
   const schema = await buildSchema({
-    resolvers: [HelloResolver],
+    resolvers: [RegisterResolver],
   })
-  const apolloServer = new ApolloServer({schema})
+  const apolloServer = new ApolloServer({ schema })
   const app = Express()
-  apolloServer.applyMiddleware({app})
+  apolloServer.applyMiddleware({ app })
   app.listen(3000, () => console.log('listening on http://localhost:3000'))
 })()
