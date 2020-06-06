@@ -10,3 +10,9 @@ services:
         target: /var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: "password"
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
+    volumes:
+      - ~/docker/volumes/redis:/data
