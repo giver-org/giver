@@ -18,11 +18,14 @@ import { redis } from "./redis";
   // Build schema.
   const schema = await buildSchema({
     resolvers: [RegisterResolver, LoginResolver, MeResolver],
+    authChecker: ({ context: { req } }) => {
+      return !!req.session.userId;
+    },
   });
 
   const apolloServer = new ApolloServer({
     schema,
-		// Add express req to resolver context.
+    // Add express req to resolver context.
     context: ({ req }) => ({ req }),
   });
 
