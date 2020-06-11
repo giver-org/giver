@@ -22,7 +22,7 @@ import { redis } from "./redis";
   const apolloServer = new ApolloServer({
     schema,
     // Add express req to resolver context.
-    context: ({ req }) => ({ req }),
+    context: ({ req, res }) => ({ req, res }),
   });
 
   const app = Express();
