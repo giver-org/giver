@@ -6,6 +6,10 @@ import { ConfirmUserResolver } from "../modules/user/ConfirmUser";
 import { ForgotPasswordResolver } from "../modules/user/ForgotPassword";
 import { LoginResolver } from "../modules/user/Login";
 import { LogoutResolver } from "../modules/user/Logout";
+import {
+  CreateUserResolver,
+  CreateProductResolver,
+} from "../modules/user/CreateUser";
 
 export const createSchema = () => {
   return buildSchema({
@@ -17,6 +21,8 @@ export const createSchema = () => {
       ForgotPasswordResolver,
       LoginResolver,
       LogoutResolver,
+      CreateUserResolver,
+      CreateProductResolver,
     ],
     authChecker({ context: { req } }) {
       return !!req.session.userId;
