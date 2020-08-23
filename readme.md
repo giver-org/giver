@@ -9,3 +9,7 @@ Database connection settings are in `ormconfig.json`.
 Remember to create dir for docker volume to persist postgres data: `mkdir -p ~/docker/volumes/postgres`
 
 If it is your first time running the postgres container with a specified volume directory, postgres will require an env var `POSTGRES_PASSWORD` set to create the superuser password. If you enter it wrong, or want to reset it, you can delete the volume directory and start fresh: `docker run --name postgres --rm -d -p 5432:5432 -e POSTGRES_PASSWORD=docker -v ~/docker/volumes/postgres:/var/lib/postgresql/data postgres`
+
+# Api usage notes
+
+The graphql playground sits at localhost:3000/graphql. Make sure to set the playground's setting "request.credentials" to "include". This sets the made requests to include the cookie header which allows the api to access your session.
