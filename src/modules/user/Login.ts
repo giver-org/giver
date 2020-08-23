@@ -6,7 +6,7 @@ import { Context } from "../../types/Context";
 @Resolver()
 export class LoginResolver {
   @Mutation(() => User, { nullable: true })
-  async Login(
+  async login(
     @Arg("email") email: string,
     @Arg("password") password: string,
     @Ctx() ctx: Context

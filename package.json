@@ -26,16 +26,22 @@
     "ts-node": "^8.10.1",
     "type-graphql": "^1.0.0-rc.1",
     "typeorm": "^0.2.25",
-    "typescript": "^3.9.2",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
-    "ts-node-dev": "^1.0.0-pre.44"
+    "@types/faker": "^4.1.12",
+    "@types/jest": "^26.0.0",
+    "faker": "^4.1.0",
+    "jest": "^26.0.1",
+    "ts-jest": "^26.1.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.5"
   },
   "scripts": {
     "start": "ts-node-dev --respawn src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:setup": "ts-node ./src/test-utils/setup.ts",
+    "test": "npm run db:setup && jest"
   },
   "repository": {
     "type": "git",
